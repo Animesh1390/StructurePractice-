@@ -5,6 +5,7 @@ import org.testng.Assert;
 
 public class RegisterReslutPage extends Utils // Register class  extends (inheritance concept) Util class to use Util class content
 {
+
   String regMsg1 = "Your registration completed";  // expected output
 
     public void RegisterResultToVerify()

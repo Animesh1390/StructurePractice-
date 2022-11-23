@@ -11,7 +11,7 @@ public class RegisterPage extends Utils // Extends keyword used (Inheritance con
     private  By _registerIcon = By.className("ico-register" );
     private By _genderField = By.id("gender-male");
     private By _firstNameField = By.id("FirstName");
-    private By _lastNameField = By.id("LastName");
+   private By _lastNameField = By.id("LastName");
     private By _birthDayField = By.name("DateOfBirthDay");
     private By _dateOfBirthMonthField = By.name("DateOfBirthMonth");
     private By _dateOfBirthYearField =  By.name("DateOfBirthYear");
@@ -22,12 +22,15 @@ public class RegisterPage extends Utils // Extends keyword used (Inheritance con
     private By _confirmPasswordField = By.id("ConfirmPassword");
     private By _registerButtonSubmit  = By.id("register-button");
 
+    private By _Continue = By.xpath("//a[@class=\"button-1 register-continue-button\"]");
+
+
     //  assertFalse() methods checks whether the expected value is false or not.
     // verifyUserIsOnRegisterPage Test Case for Register Page.
 
 
 
-    //
+
     public void verifyUserIsOnRegisterPage ()
     {
         Assert.assertEquals(regMsg ,"register");
@@ -42,7 +45,6 @@ public class RegisterPage extends Utils // Extends keyword used (Inheritance con
         clickOnElement(_genderField);
         typeText(_firstNameField,"Animesh");
         typeText(_lastNameField,"Patel");
-
         selectFromDropdownByVisibleText(_birthDayField,"13");
         selectFromDropdownByVisibleText(_dateOfBirthMonthField,"August");
         selectFromDropdownByVisibleText(_dateOfBirthYearField,"1990");
@@ -55,6 +57,10 @@ public class RegisterPage extends Utils // Extends keyword used (Inheritance con
         typeText(_confirmPasswordField,"Animesh1234");
         WaitForElementToBeClickable(_registerButtonSubmit,30);
         clickOnElement(_registerButtonSubmit);
+
+        clickOnElement(_Continue);
+
+
 
 
     }
