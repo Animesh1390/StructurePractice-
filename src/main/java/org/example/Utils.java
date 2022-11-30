@@ -1,9 +1,7 @@
 package org.example;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait; //
@@ -21,8 +19,10 @@ public class Utils extends BasePage
     //click() method simulates a mouse click on an element.
     public void clickOnElement(By by)
     {
+
         driver.findElement(by).click();
     }
+
 
     //sendkeys() is a method in Selenium that allows QAs to type content automatically into an editable field while executing any tests for forms.
     public void typeText(By by, String text) {
@@ -55,11 +55,13 @@ public class Utils extends BasePage
     public void WaitForElementToBeClickable(By by,int duration)
     {
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(duration));
+        //explicity wait
         wait.until(ExpectedConditions.elementToBeClickable(by));
 
 
 
     }
+
 
     //This can be used to wait for browser redirects on certain sites
     public void WaitForUrlTobe(String url,int duration){
@@ -102,6 +104,8 @@ public class Utils extends BasePage
             throw new RuntimeException(e);
         }
     }
+
+
 
 
 

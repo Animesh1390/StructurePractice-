@@ -35,6 +35,9 @@ EmailAFriend emailAFriend =new EmailAFriend();
 //Created Object of EmailToFriendResult class to get content of that class
 EmailToFriendResult emailToFriendResult = new EmailToFriendResult();
 
+CamaraPhotos camaraPhotos =new CamaraPhotos();
+Nike nike =new Nike();
+
 
 
 
@@ -55,26 +58,27 @@ EmailToFriendResult emailToFriendResult = new EmailToFriendResult();
     }
     @Test
 
-    public void register()
+    public void toVerifyRegister()
     {
         // class and method called through Object
 
         homePage.verifyRegisterButton();
-       registerPage.verifyUserIsOnRegisterPage();
+        registerPage.verifyUserIsOnRegisterPage();
         registerPage.enterRegistrationDetail();
 
     }
 
     @Test
-     public void currency()
+     public void toVerifyCurrency()
     {
+
 
         homePage.toVerifyCurrencySymbol();
     }
 
     @Test
 
-    public void voteButton()
+    public void userShouldAbletoVerifyVoteButton()
     {
         //Method of Homepage class toClickonVote called through object of Homepage class
         homePage.toClickOnVoteButton();
@@ -85,14 +89,14 @@ EmailToFriendResult emailToFriendResult = new EmailToFriendResult();
 
 
     @Test
-    public void faceBookButton()
+    public void toVerifyfaceBookButton()
     {
         facebook.faceBookPage(); // Method of facebook page called through object of that class
 
     }
     @Test
 
-    public void NewsComment()
+    public void toVerifyNewsComment()
     {
         newsReleaseDetails.newsCommentsDetail();  //method of Newsrelease detail called though object of that class
         newsResultPage.toVerifyCommentSentSuccessfully();
@@ -100,7 +104,8 @@ EmailToFriendResult emailToFriendResult = new EmailToFriendResult();
     }
 
     @Test
-    public void toEmailaFriend()
+    public void toVerifyemailaFriend()
+
     {
         registerPage.verifyUserIsOnRegisterPage(); // method of registerpage called though object
         registerPage.enterRegistrationDetail(); // method of register page through content
@@ -111,6 +116,25 @@ EmailToFriendResult emailToFriendResult = new EmailToFriendResult();
 
 
     }
+    @Test
+    public void toHoovertheMouseonComputer()
+    {
+        homePage.hoverOverAndNavigateToCamaraAndPhotosPage("Electronics","Camera & photo");
+
+        camaraPhotos.userShouldClickOnCamaraandPhotos();
+
+
+    }
+
+    @Test
+
+    public void toVerifyUserShouldSearchNikeinSearchStore()
+    {
+        homePage.userShouldSearchProduct();
+        nike.toverifyNikeProducts();
+
+    }
+
 
 
     }
