@@ -1,35 +1,30 @@
-package org.example;  // org.example is the package in java to store the classes
-
-import org.openqa.selenium.chrome.ChromeDriver; // Import package of chrome driver
+//A package in Java is used to group related classes.
+package org.example;
+import org.openqa.selenium.chrome.ChromeDriver;
+//importing a package of AfterMethod
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;  //
-import org.testng.annotations.BeforeMethod; //
-
-//
-public class BaseTest extends Utils // Base Test Class extends (Inheritance Java Concept) Utils Class  to use content of Util
-
-{
-
+import org.testng.annotations.AfterMethod;
+//importing a package of BeforeMethod
+import org.testng.annotations.BeforeMethod;
+//extends keyword Is used to Inherit child class(BaseTest) from parent class(Utils).
+public class BaseTest extends Utils{
+    // To communicate test scripts with Google Chrome
     DriverManager driverManager = new DriverManager();
-
-    //@BeforeMethod allows the method to execute before the execution of each @Test methods,
-    @BeforeMethod
-    public void setup()
+    @BeforeMethod//Executes before each test method
+    public void setUp()
     {
-        driverManager.OpenBrowser();
+        //The open() method opens a new browser window, or a new tab.
+        driverManager.openBrowser();
 
     }
-    //@AfterMethod allows the method to execute after the execution of each @Test methods,
-    @AfterMethod
-    public void teardown(ITestResult result)  // to close the browser
+    @AfterMethod//Executes after each test method
+    public void teardown(ITestResult result)
     {
-        // ! used for reverse the result
-        if ((!result.isSuccess()))
-        {
-captureScreenshot(result.getName());   // capture Screenshot method called to capture screenshot while
-
+        //If statement is use for to Capture ScreenShot when any class fail
+        if (!result.isSuccess()){
+            captureScreenshot(result.getName());
         }
-        driver.close(); // to close the driver
-   }
-
+        // to close the browser
+        driver.quit();
+    }
 }

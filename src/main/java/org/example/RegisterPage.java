@@ -43,18 +43,19 @@ public class RegisterPage extends Utils // Extends keyword used (Inheritance con
         //Reusable Method Called from Util Class & called Variable from Register Page.
         clickOnElement(_registerIcon);
         clickOnElement(_genderField);
-        typeText(_firstNameField,"Animesh");
-        typeText(_lastNameField,"Patel");
-        selectFromDropdownByVisibleText(_birthDayField,"13");
-        selectFromDropdownByVisibleText(_dateOfBirthMonthField,"August");
-        selectFromDropdownByVisibleText(_dateOfBirthYearField,"1990");
+        typeText(_firstNameField,LoadProp.getProperty("firstname"));
+        typeText(_lastNameField,LoadProp.getProperty("lastname"));
 
-        typeText(_emailField,"animesh1390"+getTimeStamp()+"@gmail.com");
-        typeText(_companyField,"AbcLtd");
+        selectFromDropdownByVisibleText(_birthDayField,LoadProp.getProperty("dateofbirth"));
+        selectFromDropdownByVisibleText(_dateOfBirthMonthField,LoadProp.getProperty("month"));
+        selectFromDropdownByVisibleText(_dateOfBirthYearField,LoadProp.getProperty("year"));
+
+        typeText(_emailField,LoadProp.getProperty("email")+getTimeStamp()+LoadProp.getProperty(("email1")));
+        typeText(_companyField,LoadProp.getProperty("companyname"));
         clickOnElement(_newsField);
 
-        typeText(_passWordField,"Animesh1234");
-        typeText(_confirmPasswordField,"Animesh1234");
+        typeText(_passWordField,LoadProp.getProperty("password"));
+        typeText(_confirmPasswordField,LoadProp.getProperty("confirmpassword"));
         WaitForElementToBeClickable(_registerButtonSubmit,30);
         clickOnElement(_registerButtonSubmit);
 
