@@ -74,8 +74,6 @@ public class HomePage extends Utils // HomePage Class Extends keyword (Inheritan
         clickOnElement(By.linkText(subCategory));
 
 
-
-
     }
 
     public void userShouldSearchProduct()
