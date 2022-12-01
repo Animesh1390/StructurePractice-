@@ -115,7 +115,6 @@ public class DriverManager extends Utils
 
 
 
-
         //set application URL to navigate
         driver.get(LoadProp.getProperty("url"));
 
